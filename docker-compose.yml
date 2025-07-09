@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 services:
     app:
         volumes:
@@ -6,8 +6,6 @@ services:
             - ./instances:/app/instances
             - ./logs:/app/logs
             - ./maps:/app/maps
-        environment:
-            - RPP_DISCORD_CLIENT_ID=111....1111
-            - RPP_DISCORD_TOKEN=token
-        container_name: rpp
+        env_file: .env
+        container_name: Rust++
         image: ghcr.io/alexemanuelol/rustplusplus
